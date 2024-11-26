@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulador de Financiamento de Veículos</title>
-    <link rel="stylesheet" href="simulador.css">
+    <link rel="stylesheet" href="src/simulador.css">
     
 </head>
 <body>
@@ -13,7 +13,7 @@
             <ul class="nav-list">
                 <div id="logo">
                     <a href="index.html">
-                        <img src="logosite.png" alt="logo do site" width="300" height="80px">
+                        <img src="src/logosite.png" alt="logo do site" width="300" height="80px">
                     </a>
                 </div>
             </ul>
@@ -81,7 +81,10 @@
                         <input type="number" id="juros" placeholder="Juros (%)" step="0.01"  required>
                     </div>
                 </div>
-                <button type="submit">Simular</button>
+                <div class="button-group">
+                    <button type="button" id="voltar">Voltar</button>
+                    <button type="submit">Simular</button>
+                </div>
             </form>
         </div>
 
@@ -110,6 +113,6 @@
         </footer>
     </div>
 
-    <script src="script.js"></script>
+    <script src="src/script.js"></script>
 </body>
 </html>
