@@ -76,12 +76,21 @@ body {
     font-size: 0.9rem;
 }
 
-.form-item input {
+.form-item input, .form-item select {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
     font-size: 1rem;
+}
+
+form select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background-color: #fff;
 }
 
 /* Estilos responsivos */
