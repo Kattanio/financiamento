@@ -120,20 +120,26 @@ form select {
 
 /* Estilos responsivos */
 @media (max-width: 900px) {
-    .form-group {
-        flex-direction: column; 
-        align-items: flex-start;
-    }
 
-    .form-item {
-        width: 100%; 
-    }
+        .header-simulador {
+            flex-direction: column; /* Alinhar os itens verticalmente */
+            align-items: center; /* Centralizar os itens */
+        }
+    
+        .logo-site {
+            margin-top: 20px;
+            max-width: 150px; /* Reduzir tamanho da logo */
+        }
+    
+        .form-group {
+            flex-direction: column; /* Colocar os inputs em uma coluna */
+            gap: 10px;
+        }
+    
+        .form-item {
+            width: 100%; /* Inputs ocupam toda a largura */
+        }
 
-
-    .logo-site {
-        width: 150px;
-        margin-top: 50px;
-    }
 }
 
 
@@ -220,7 +226,5 @@ a:active {
     color: #ffffff;
 }
 
-#logo {
-    padding-left: 10%;
-}
+
 
