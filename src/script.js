@@ -167,7 +167,8 @@ document.addEventListener('DOMContentLoaded', function () {
             // Cálculo do simulador
             const valorFinanciado = valorTotal - entrada;
             const valorParcela = (valorFinanciado * taxaJuros) / (1 - Math.pow(1 + taxaJuros, -parcelas));
-            const totalPago = valorParcela * parcelas;
+            const totalparcelaPago = valorParcela * parcelas;
+            const valorpagoTotal = entrada + totalparcelaPago
     
             // Função de formatação para reais
             function formatarReais(valor) {
@@ -182,9 +183,11 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('resNome').textContent = document.getElementById('nome').value;
             document.getElementById('resValor').textContent = formatarReais(valorTotal);
             document.getElementById('resEntrada').textContent = formatarReais(entrada);
+            document.getElementById('resFinanciado').textContent = formatarReais(valorFinanciado);
             document.getElementById('resParcelas').textContent = parcelas;
             document.getElementById('resParcela').textContent = formatarReais(valorParcela);
-            document.getElementById('resTotal').textContent = formatarReais(totalPago);
+            document.getElementById('resparcelasTotal').textContent = formatarReais(totalparcelaPago);
+            document.getElementById('resTotal').textContent = formatarReais(valorpagoTotal);
     
             // Alterar visibilidade dos formulários e do resultado
             formDadosVeiculo.style.display = 'none';
