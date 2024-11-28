@@ -39,7 +39,7 @@ document.getElementById('nome').addEventListener('input', function (e) {
         cpf = cpf.replace(/\D/g, ''); 
     
         if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) {
-            return false; // Verifica se tem 11 dígitos ou se todos os dígitos são iguais
+            return false; 
         }
     
         // Calcula o primeiro dígito verificador
@@ -68,9 +68,9 @@ document.getElementById('nome').addEventListener('input', function (e) {
         const cpf = cpfInput.value;
     
         if (validarCPF(cpf)) {
-            cpfInput.setCustomValidity(''); // CPF válido
+            cpfInput.setCustomValidity(''); 
         } else {
-            cpfInput.setCustomValidity('Digite um CPF válido.'); // CPF inválido
+            cpfInput.setCustomValidity('Digite um CPF válido.'); 
         }
     });
 
@@ -114,7 +114,7 @@ function verificarLimiteParcelas() {
     if (parcelas > 60) {
         document.getElementById('parcelas').setCustomValidity("O número máximo de parcelas é 60.");
     } else {
-        document.getElementById('parcelas').setCustomValidity(""); // Limpa a mensagem de erro
+        document.getElementById('parcelas').setCustomValidity(""); 
     }
 }
 
@@ -149,6 +149,14 @@ document.addEventListener('DOMContentLoaded', function () {
     // Botão continuar do Dados do Veiculo
     formDadosVeiculo.addEventListener('submit', function (e) {
         e.preventDefault();
+
+        document.getElementById('form-dados-veiculo').addEventListener('submit', function (e) {
+            e.preventDefault();
+    
+            // Simular processamento
+            document.getElementById('dados-veiculo').style.display = 'none';
+            document.getElementById('resultado-simulacao').style.display = 'block';
+        });
 
         // Simulação de resultados
         const valorTotal = parseFloat(document.getElementById('valorTotal').value.replace(/\D/g, '')) / 100;

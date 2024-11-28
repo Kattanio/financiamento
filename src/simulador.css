@@ -57,7 +57,7 @@ body {
     color: #666;
 }
 
-/* Estilos básicos */
+
 .form-group {
     display: flex;
     justify-content: space-between; 
@@ -121,13 +121,13 @@ button {
 
 .button-group {
     display: flex;
-    justify-content: space-between; /* Espaça os botões igualmente */
-    gap: 10px; /* Espaçamento entre os botões */
+    justify-content: space-between; 
+    gap: 10px; 
 }
 
 .button-group button {
-    flex: 1; /* Botões ocupam o mesmo tamanho */
-    max-width: 200px; /* Opcional: define um tamanho máximo */
+    flex: 1; 
+    max-width: 200px; 
 }
 
 #resultado-simulacao {
@@ -135,6 +135,18 @@ button {
 }
 #titulo{
     padding-bottom: 2%;
+}
+
+.resultado-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo-centro {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+    display: block;
 }
 
 
