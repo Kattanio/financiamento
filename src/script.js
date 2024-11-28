@@ -1,4 +1,4 @@
-    /* Ínicio extra */
+    /* Ínicio JS */
 
     // Não permitir que o usuário digite letras apenas números ou apenas letras e números
 function apenasNumeros(event) {
@@ -107,12 +107,12 @@ function verificarEntradaMenorQueValorTotal() {
 }
 
 
-
+    // Verificar se a parcela é muito alta
 function verificarLimiteParcelas() {
     const parcelas = parseInt(document.getElementById('parcelas').value);
     
-    if (parcelas > 60) {
-        document.getElementById('parcelas').setCustomValidity("O número máximo de parcelas é 60.");
+    if (parcelas > 100) {
+        document.getElementById('parcelas').setCustomValidity("O número máximo de parcelas é 100.");
     } else {
         document.getElementById('parcelas').setCustomValidity(""); 
     }
@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
     
-    
+  // Lista dos modelos de carro   
 const modelosCarros = [
     "Chevrolet Onix",
     "Ford Ka",
@@ -224,3 +224,4 @@ modelosCarros.forEach(modelo => {
     selectCarros.appendChild(option);
 });
 
+/* Fim JS */
