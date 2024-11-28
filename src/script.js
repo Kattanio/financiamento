@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
             document.getElementById('form-dados-veiculo').addEventListener('submit', function (e) {
                 e.preventDefault();
-        
+    
                 // Simular processamento
                 document.getElementById('dados-veiculo').style.display = 'none';
                 document.getElementById('resultado-simulacao').style.display = 'block';
@@ -169,13 +169,22 @@ document.addEventListener('DOMContentLoaded', function () {
             const valorParcela = (valorFinanciado * taxaJuros) / (1 - Math.pow(1 + taxaJuros, -parcelas));
             const totalPago = valorParcela * parcelas;
     
+            // Função de formatação para reais
+            function formatarReais(valor) {
+                return new Intl.NumberFormat('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL'
+                }).format(valor);
+            } 
+
+    
             // Atualizar elementos no resultado
             document.getElementById('resNome').textContent = document.getElementById('nome').value;
-            document.getElementById('resValor').textContent = valorTotal.toFixed(2);
-            document.getElementById('resEntrada').textContent = entrada.toFixed(2);
+            document.getElementById('resValor').textContent = formatarReais(valorTotal);
+            document.getElementById('resEntrada').textContent = formatarReais(entrada);
             document.getElementById('resParcelas').textContent = parcelas;
-            document.getElementById('resParcela').textContent = valorParcela.toFixed(2);
-            document.getElementById('resTotal').textContent = totalPago.toFixed(2);
+            document.getElementById('resParcela').textContent = formatarReais(valorParcela);
+            document.getElementById('resTotal').textContent = formatarReais(totalPago);
     
             // Alterar visibilidade dos formulários e do resultado
             formDadosVeiculo.style.display = 'none';
@@ -188,7 +197,8 @@ document.addEventListener('DOMContentLoaded', function () {
             formDadosVeiculo.style.display = 'none';
             resultadoSimulacao.style.display = 'none';
         });
-});
+    });
+    
     
 const modelosCarros = [
     "Chevrolet Onix",
