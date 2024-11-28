@@ -130,68 +130,66 @@ function verificarLimiteParcelas() {
 
     /*   Ínicio do Simulador De Financiamento  */
 document.addEventListener('DOMContentLoaded', function () {
-    const formDadosPessoais = document.getElementById('dados-pessoais');
-    const formDadosVeiculo = document.getElementById('dados-veiculo');
-    const resultadoSimulacao = document.getElementById('resultado-simulacao');
-
-    // Mostrar primeiro os dados pessoais e bloquear todo o resto
-    formDadosPessoais.style.display = 'block';
-    formDadosVeiculo.style.display = 'none';
-    resultadoSimulacao.style.display = 'none';
-
-    // Botão continuar do Dados Pessoais
-    formDadosPessoais.addEventListener('submit', function (e) {
-        e.preventDefault(); 
-        formDadosPessoais.style.display = 'none'; 
-        formDadosVeiculo.style.display = 'block';
-    });
-
-    // Botão continuar do Dados do Veiculo
-    formDadosVeiculo.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        document.getElementById('form-dados-veiculo').addEventListener('submit', function (e) {
+        const formDadosPessoais = document.getElementById('dados-pessoais');
+        const formDadosVeiculo = document.getElementById('dados-veiculo');
+        const resultadoSimulacao = document.getElementById('resultado-simulacao');
+    
+        // Mostrar primeiro os dados pessoais e bloquear todo o resto
+        formDadosPessoais.style.display = 'block';
+        formDadosVeiculo.style.display = 'none';
+        resultadoSimulacao.style.display = 'none';
+    
+        // Botão continuar do Dados Pessoais
+        formDadosPessoais.addEventListener('submit', function (e) {
+            e.preventDefault();
+            formDadosPessoais.style.display = 'none';
+            formDadosVeiculo.style.display = 'block';
+        });
+    
+        // Botão continuar do Dados do Veículo
+        formDadosVeiculo.addEventListener('submit', function (e) {
             e.preventDefault();
     
-            // Simular processamento
-            document.getElementById('dados-veiculo').style.display = 'none';
-            document.getElementById('resultado-simulacao').style.display = 'block';
+            document.getElementById('form-dados-veiculo').addEventListener('submit', function (e) {
+                e.preventDefault();
+        
+                // Simular processamento
+                document.getElementById('dados-veiculo').style.display = 'none';
+                document.getElementById('resultado-simulacao').style.display = 'block';
+            });
+    
+            // Recuperar valores do formulário
+            const valorTotal = parseFloat(document.getElementById('valorTotal').value.replace(/\D/g, '')) / 100;
+            const entrada = parseFloat(document.getElementById('entrada').value.replace(/\D/g, '')) / 100;
+            const parcelas = parseInt(document.getElementById('parcelas').value);
+            const taxaJuros = parseFloat(document.getElementById('juros').value) / 100;
+    
+            // Cálculo do simulador
+            const valorFinanciado = valorTotal - entrada;
+            const valorParcela = (valorFinanciado * taxaJuros) / (1 - Math.pow(1 + taxaJuros, -parcelas));
+            const totalPago = valorParcela * parcelas;
+    
+            // Atualizar elementos no resultado
+            document.getElementById('resNome').textContent = document.getElementById('nome').value;
+            document.getElementById('resValor').textContent = valorTotal.toFixed(2);
+            document.getElementById('resEntrada').textContent = entrada.toFixed(2);
+            document.getElementById('resParcelas').textContent = parcelas;
+            document.getElementById('resParcela').textContent = valorParcela.toFixed(2);
+            document.getElementById('resTotal').textContent = totalPago.toFixed(2);
+    
+            // Alterar visibilidade dos formulários e do resultado
+            formDadosVeiculo.style.display = 'none';
+            resultadoSimulacao.style.display = 'block';
         });
-
-        // Simulação de resultados
-        const valorTotal = parseFloat(document.getElementById('valorTotal').value.replace(/\D/g, '')) / 100;
-        const entrada = parseFloat(document.getElementById('entrada').value.replace(/\D/g, '')) / 100;
-        const parcelas = parseInt(document.getElementById('parcelas').value);
-        const taxaJuros = parseFloat(document.getElementById('juros').value) / 100;
-
-
-        // Cálculo do simulador
-        const valorFinanciado = valorTotal - entrada;
-        const valorParcela = (valorFinanciado * taxaJuros) / (1 - Math.pow(1 + taxaJuros, -parcelas));
-        const totalPago = valorParcela * parcelas;
-
-        // Guardar os dados do usuário para aparecer no resultado final
-        resultadoSimulacao.innerHTML = `
-            <h2>Resultado da Simulação</h2>
-            <p>Valor do Veículo: R$ ${valorTotal.toFixed(2)}</p>
-            <p>Entrada: R$ ${entrada.toFixed(2)}</p>
-            <p>Parcelas: ${parcelas} x R$ ${valorParcela.toFixed(2)}</p>
-            <p>Total a ser pago: R$ ${totalPago.toFixed(2)}</p>
-            <button id="refazer">Refazer Simulação</button>
-        `;
-
-        formDadosVeiculo.style.display = 'none';
-        resultadoSimulacao.style.display = 'block';
-
+    
         // Botão para refazer a simulação
         document.getElementById('refazer').addEventListener('click', function () {
             formDadosPessoais.style.display = 'block';
             formDadosVeiculo.style.display = 'none';
             resultadoSimulacao.style.display = 'none';
         });
-    });
 });
-
+    
 const modelosCarros = [
     "Chevrolet Onix",
     "Ford Ka",

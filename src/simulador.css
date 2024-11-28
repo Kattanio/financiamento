@@ -35,6 +35,9 @@ body {
     padding: 20px;
 }
 
+
+
+/* Simulador */
 .simulador {
     background-color: #e4e4fc;
     padding: 20px;
@@ -118,26 +121,26 @@ form select {
     background-color: #fff;
 }
 
-/* Estilos responsivos */
-@media (max-width: 900px) {
+/* Responsividade */
+@media (max-width: 1000px) {
 
         .header-simulador {
-            flex-direction: column; /* Alinhar os itens verticalmente */
-            align-items: center; /* Centralizar os itens */
+            flex-direction: column; 
+            align-items: center; 
         }
     
         .logo-site {
-            margin-top: 20px;
-            max-width: 150px; /* Reduzir tamanho da logo */
+            margin-top: 30px;
+            max-width: 320px; 
         }
     
         .form-group {
-            flex-direction: column; /* Colocar os inputs em uma coluna */
+            flex-direction: column; 
             gap: 10px;
         }
     
         .form-item {
-            width: 100%; /* Inputs ocupam toda a largura */
+            width: 100%; 
         }
 
        
@@ -169,6 +172,8 @@ button {
     max-width: 200px; 
 }
 
+
+/* Resultado da simulação */
 #resultado-simulacao {
     display: none;
 }
@@ -177,15 +182,18 @@ button {
 }
 
 .resultado-header {
-    text-align: center;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    flex-direction: column; 
     margin-bottom: 20px;
+    text-align: center; 
 }
 
 .logo-centro {
-    max-width: 200px;
+    max-width: 300px;
     height: auto;
-    margin-bottom: 10px;
-    display: block;
+    margin: 0 auto; 
 }
 
 
