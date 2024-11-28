@@ -25,24 +25,30 @@
 
         <!-- Formulário de Dados Pessoais -->
         <div class="simulador" id="dados-pessoais">
-            <h2 style="text-align: left;">Simule o financiamento de um veículo</h2>
-            <p style="text-align: left;">Vamos começar, forneça os seguintes dados</p>
-            <img src="src/Captura de tela 2024-11-28 105937-Photoroom (1).png" alt="logo do site" width="300px" height="auto ">
+            <div class="header-simulador">
+                <div class="textos">
+                    <h2>Simule o financiamento de um veículo</h2>
+                    <p>Vamos começar, forneça os seguintes dados</p>
+                </div>
+                <div class="logo">
+                    <img src="src/logosite-azul.png" alt="Logo do site" class="logo-site" >
+                </div>
+            </div>
             <form id="form-dados-pessoais">
                 <div class="form-group">
                     <div class="form-item">
                         <span>Nome completo</span>
-                        <input type="text" id="nome" placeholder="Nome completo" >
+                        <input type="text" id="nome" placeholder="Nome completo">
                     </div>
                     <div class="form-item">
                         <span>Data de Nascimento</span>
-                        <input type="date" id="dataNascimento" placeholder="Data de Nascimento" >
+                        <input type="date" id="dataNascimento" placeholder="Data de Nascimento">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="form-item">
                         <span>E-mail</span>
-                        <input type="email" id="email" placeholder="E-mail" >
+                        <input type="email" id="email" placeholder="E-mail">
                     </div>
                     <div class="form-item">
                         <span>CPF</span>
@@ -52,6 +58,7 @@
                 <button type="submit">Continuar</button>
             </form>
         </div>
+        
 
         <!-- Formulário dos Dados do Veículo -->
         <div class="simulador" id="dados-veiculo" style="display: none;">

@@ -57,6 +57,31 @@ body {
     color: #666;
 }
 
+.header-simulador {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.header-simulador .textos h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+    text-align: left;
+}
+
+.header-simulador .textos p {
+    margin: 5px 0 0;
+    color: #666;
+    text-align: left;
+}
+
+.logo-site {
+    max-width: 300px;
+    height: auto;
+}
+
 
 .form-group {
     display: flex;
